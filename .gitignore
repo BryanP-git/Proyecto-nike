@@ -1,0 +1,6 @@
+node_modules/
+client/node_modules/
+android/build/
+data/db.json.importado
+# clave privada con la que se firma la APK: no la subas a un repositorio público
+android/firma/

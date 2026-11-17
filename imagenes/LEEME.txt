@@ -1,0 +1,24 @@
+AQUÍ VAN TUS IMÁGENES (guarda y recarga la página; no hace falta recompilar).
+
+PAREDES (el fondo de cada pared del cuarto), formato horizontal 2:1 (ej. 2048 x 1024 px):
+  pared-camisas.jpg   pared-hoodies.jpg   pared-pantalones.jpg   pared-zapatos.jpg
+Desde la v5 las paredes van SIN baranda y SIN piso: la barra y el piso los dibuja el cuarto (la barra queda a ~28% desde arriba, entre el 15% y el 87% del ancho).
+Si una foto nueva trae baranda o piso, pásala por tools/clean_walls.py (originales en imagenes/originales/).
+Para cambiar qué imagen va en cada pared, solo cambia los nombres.
+
+PRENDAS: PNG con fondo transparente, vertical 4:5 (ej. 800 x 1000), de frente, colgada desde el borde superior.
+ZAPATOS: PNG transparente, de perfil y horizontal (ej. 1000 x 600).
+Nombre = id del producto: h-camisas-1.png (h = hombre, m = mujer · categoría · número 1 a 6). Ver ids en /api/catalog
+Una foto por color (opcional): h-camisas-1-negro.png. Sin foto, se muestra un dibujo.
+
+PORTADAS del inicio: portada-hombre.jpg (ya incluida) y portada-mujer.jpg (horizontal, 1600 x 900; hasta que la pongas se usa una pared de grafiti).
+LOGO: imagenes/logo.png (fondo transparente, alto ~60 px). Si existe, reemplaza el texto de la marca en la cabecera.
+Nombre de la marca: constante BRAND en client/src/App.jsx.
+
+portada-mujer.jpg ya incluida. Para mejor calidad usa fotos verticales de al menos 1000 x 1250 px.
+El logo debe ser de un solo color: se vuelve negro en tema claro y blanco en tema oscuro.
+
+--- CATÁLOGO NIKE (v4) ---
+Hay 10 fotos por categoría: h-camisas-1.png … h-camisas-10.png (h = hombre, m = mujer; camisas, hoodies, pantalones, zapatos).
+Ropa: PNG transparente 800 x 1000, SIN gancho (la app dibuja el gancho cromado; el borde de arriba de la prenda va a ~20% del alto). Zapatos: PNG transparente 800 x 480, de perfil.
+El orden coincide con catalog.js (el número 1 es el primero de cada pared). Para cambiar una foto, reemplaza el archivo con el mismo nombre.

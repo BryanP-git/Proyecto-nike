@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Armario</title>
+<style>
+:root{--rosa:#ff2e93;--cian:#19e0f0;--fondo:#07050b;--panel:#130d1f;--txt:#fff;--sub:#c4b8d8}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--fondo);color:var(--txt);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+body{display:flex;flex-direction:column;justify-content:center;padding:max(28px,env(safe-area-inset-top)) 22px max(28px,env(safe-area-inset-bottom));overflow:hidden;position:relative}
+body::before,body::after{content:"";position:fixed;width:80vmax;height:80vmax;border-radius:50%;filter:blur(80px);opacity:.28;z-index:0;pointer-events:none}
+body::before{background:var(--rosa);left:-40vmax;top:-40vmax;animation:flota 14s ease-in-out infinite alternate}
+body::after{background:var(--cian);right:-45vmax;bottom:-45vmax;animation:flota 17s ease-in-out -5s infinite alternate-reverse}
+@keyframes flota{to{transform:translate(12vmax,10vmax) scale(1.15)}}
+main{position:relative;z-index:1;max-width:440px;width:100%;margin:0 auto;animation:entra .7s cubic-bezier(.2,.8,.2,1) both}
+@keyframes entra{from{opacity:0;transform:translateY(30px)}}
+.logo{width:76px;height:76px;border-radius:20px;display:block;margin-bottom:22px;box-shadow:0 12px 40px #ff2e9340}
+h1{font:800 2.6rem/1 Impact,"Arial Black",sans-serif;letter-spacing:.02em;margin:0 0 8px;text-transform:uppercase;text-shadow:-2px 0 var(--cian),2px 0 var(--rosa)}
+p{color:var(--sub);margin:0 0 22px}
+label{display:block;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);margin-bottom:6px}
+input{width:100%;padding:15px 16px;font-size:1.05rem;border-radius:12px;border:1.5px solid #ffffff33;background:#0a0710cc;color:#fff;outline:none;transition:border-color .2s}
+input:focus{border-color:var(--rosa)}
+button{width:100%;margin-top:14px;padding:15px;border:0;border-radius:12px;font-size:1.05rem;font-weight:700;color:#fff;background:var(--rosa);transition:transform .15s}
+button:active{transform:scale(.97)}
+button.sec{background:none;border:1.5px solid #ffffff33;color:var(--sub);font-weight:500}
+.msg{min-height:1.4em;margin:14px 0 0;font-size:.9rem}
+.err{color:#ff8f9a}.ok{color:#3fe08a}
+ol{color:var(--sub);font-size:.88rem;padding-left:20px;margin:26px 0 0}
+ol li{margin-bottom:6px}
+code{color:#fff;background:#ffffff14;padding:1px 6px;border-radius:5px}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid #fff6;border-top-color:#fff;border-radius:50%;animation:gira .7s linear infinite;vertical-align:-2px;margin-right:8px}
+@keyframes gira{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<main>
+ <img class="logo" src="ic.png" alt="">
+ <h1>Armario</h1>
+ <p id="intro">Escribe la dirección del servidor de la tienda para entrar.</p>
+ <label for="url">Dirección del servidor</label>
+ <input id="url" type="url" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false" placeholder="http://192.168.1.20:3000">
+ <button id="go">Conectar</button>
+ <button id="force" class="sec" hidden>Entrar de todas formas</button>
+ <p id="msg" class="msg"></p>
+ <ol>
+  <li>En el computador enciende MySQL en XAMPP y corre <code>npm start</code>.</li>
+  <li>La consola muestra la dirección para el celular, por ejemplo <code>http://192.168.1.20:3000</code>.</li>
+  <li>El celular y el computador deben estar en la misma red WiFi.</li>
+ </ol>
+</main>
+<script>
+var $=function(id){return document.getElementById(id)};
+var q=new URLSearchParams(location.hash.slice(1));
+if(q.get("u"))$("url").value=q.get("u");
+if(q.get("e")){$("intro").textContent="No se pudo abrir la tienda. Revisa la dirección o que el servidor esté encendido.";$("msg").className="msg err"}
+function clean(v){v=v.trim().replace(/\/+$/,"");if(!v)return "";if(!/^https?:\/\//i.test(v))v="http://"+v;if(!/^https:/i.test(v)&&!/:\d+$/.test(v.replace(/^https?:\/\//i,"")))v+=":3000";return v}
+function save(u){location.href="armario://save?url="+encodeURIComponent(u)}
+$("go").onclick=function(){
+ var u=clean($("url").value);
+ if(!u){$("msg").className="msg err";$("msg").textContent="Escribe la dirección.";return}
+ $("url").value=u;$("force").hidden=true;
+ $("msg").className="msg";$("msg").innerHTML='<span class="spin"></span>Probando conexión…';
+ var ctl=new AbortController(),t=setTimeout(function(){ctl.abort()},6000);
+ fetch(u+"/api/rules",{mode:"no-cors",signal:ctl.signal,cache:"no-store"}).then(function(){clearTimeout(t);$("msg").className="msg ok";$("msg").textContent="Conectado.";setTimeout(function(){save(u)},350)})
+ .catch(function(){clearTimeout(t);$("msg").className="msg err";$("msg").textContent="No hubo respuesta de "+u+". Revisa la dirección y la red WiFi.";$("force").hidden=false});
+};
+$("force").onclick=function(){var u=clean($("url").value);if(u)save(u)};
+$("url").addEventListener("keydown",function(e){if(e.key==="Enter")$("go").click()});
+</script>
+</body>
+</html>

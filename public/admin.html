@@ -1,0 +1,56 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Panel · Armario</title>
+<style>
+body{font:15px/1.5 system-ui,sans-serif;margin:0;padding:24px;background:#f3f1f6;color:#1a1424}h1,h2{margin:0 0 12px}
+input,button,select,textarea{font:inherit;padding:7px 10px;border:1.5px solid #c9c2d6;border-radius:6px;background:#fff;color:inherit}
+button{background:#ff2e93;color:#fff;border-color:#ff2e93;cursor:pointer;font-weight:600}button.g{background:#fff;color:#1a1424;border-color:#c9c2d6}
+.tabs{display:flex;gap:8px;margin:16px 0}.tabs button{background:#fff;color:#1a1424;border-color:#c9c2d6}.tabs .on{background:#1a1424;color:#fff;border-color:#1a1424}
+.k{display:flex;gap:12px;margin:12px 0 18px;flex-wrap:wrap}.k div{background:#fff;padding:12px 20px;border-radius:10px;box-shadow:0 2px 8px #0000000d}.k b{display:block;font-size:1.5rem}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden}td,th{padding:8px 10px;border-bottom:1px solid #e6e1ee;text-align:left;vertical-align:top}th{background:#faf8fc;font-size:.85rem}
+.w{overflow-x:auto}.sz{display:flex;flex-wrap:wrap;gap:6px}.sz label{display:flex;flex-direction:column;font-size:.75rem;color:#6b6478}.sz input{width:74px}.sz input.low{border-color:#e0424f;background:#fff1f2}
+.pr{width:110px}.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px}small{color:#6b6478}.ok{color:#1f9d5c;font-weight:700}
+textarea{width:100%;min-height:60px}.msg{max-width:420px}
+</style></head><body>
+<h1>Panel · Armario</h1>
+<div class="bar"><input id="t" type="password" placeholder="Token de administrador (ADMIN_TOKEN)"> <button id="go">Entrar</button> <span id="st"></span></div>
+<div id="app" hidden>
+ <div class="k" id="kpi"></div>
+ <div class="tabs"><button data-t="ped" class="on">Pedidos</button><button data-t="inv">Inventario</button><button data-t="pq">PQRS</button></div>
+ <div id="ped"></div><div id="inv" hidden></div><div id="pq" hidden></div>
+</div>
+<script>
+const $=s=>document.querySelector(s),m=n=>new Intl.NumberFormat("es-CO",{style:"currency",currency:"COP",maximumFractionDigits:0}).format(n);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let T=sessionStorage.getItem("t")||"",INV=[];const H=()=>({Authorization:"Bearer "+T,"Content-Type":"application/json"});
+const api=async(u,b,meth)=>{const r=await fetch(u,{method:meth||(b?"PATCH":"GET"),headers:H(),body:b?JSON.stringify(b):undefined}),d=await r.json();if(!r.ok)throw new Error(d.error||"Error");return d};
+const flash=t=>{$("#st").innerHTML=`<span class="ok">${esc(t)}</span>`;setTimeout(()=>$("#st").textContent="",1800)};
+const EST=["nuevo","pagado","enviado","entregado","cancelado"];
+async function pedidos(){
+ const {orders,low,kpi}=await api("/api/admin/orders");
+ $("#kpi").innerHTML=`<div><b>${kpi.pedidos}</b>pedidos</div><div><b>${m(kpi.ventas)}</b>ventas (sin cancelados)</div><div><b>${Number(kpi.unidades).toLocaleString("es-CO")}</b>unidades en inventario</div><div><b>${kpi.clientes}</b>clientes</div><div><b>${kpi.pqrs}</b>PQRS abiertas</div>`;
+ $("#ped").innerHTML=`<div class="w"><table><tr><th>Pedido</th><th>Cliente</th><th>Prendas</th><th>Total</th><th>Estado</th></tr>${orders.map(o=>`<tr><td><b>${esc(o.id)}</b><br><small>${esc(o.invoice)} · ${esc(o.date)}</small></td><td>${esc(o.customer.name)}<br><small>${esc(o.customer.email)} · ${esc(o.customer.phone)}<br>${esc(o.customer.address)}, ${esc(o.customer.city)}</small></td><td>${o.items.map(i=>`${i.q}× ${esc(i.n)} <small>(${esc(i.col)}, talla ${esc(i.size)})</small>`).join("<br>")}</td><td>${m(o.total)}<br><small>${o.shipping?"envío "+m(o.shipping):"envío gratis"} · ${o.payment.method==="contraentrega"?"contra entrega":`${esc(o.payment.brand)} •••• ${esc(o.payment.last4)}`}</small></td><td><select data-o="${esc(o.id)}">${EST.map(s=>`<option ${s===o.status?"selected":""}>${s}</option>`).join("")}</select></td></tr>`).join("")||"<tr><td colspan=5>Aún no hay pedidos.</td></tr>"}</table></div>
+ <h2 style="margin-top:24px">Tallas con menos stock</h2><ul>${low.map(p=>`<li>${esc(p.n)} (${esc(p.g)}, ${esc(p.color)}, talla ${esc(p.talla)}): <b>${p.stock}</b></li>`).join("")}</ul>`;
+}
+async function inventario(){
+ INV=await api("/api/admin/inventory");
+ const g=$("#fg")?.value||"hombre",c=$("#fc")?.value||"camisas";
+ const rows=INV.filter(p=>p.genero===g&&p.categoria===c);
+ $("#inv").innerHTML=`<div class="bar"><select id="fg">${["hombre","mujer"].map(x=>`<option ${x===g?"selected":""}>${x}</option>`).join("")}</select><select id="fc">${["camisas","hoodies","pantalones","zapatos"].map(x=>`<option ${x===c?"selected":""}>${x}</option>`).join("")}</select><small>Los cambios se guardan al salir de cada casilla. En rojo: 20 unidades o menos.</small></div>
+ <div class="w"><table><tr><th>Producto</th><th>Precio</th><th>Activo</th><th>Stock por talla</th></tr>${rows.map(p=>`<tr><td><b>${esc(p.nombre)}</b><br><small>${esc(p.id)}</small></td><td><input class="pr" type="number" min="1000" step="100" value="${p.precio}" data-p="${esc(p.id)}"></td><td><input type="checkbox" ${p.activo?"checked":""} data-a="${esc(p.id)}"></td><td>${[...new Set(p.inv.map(i=>i.color))].map(col=>`<div><small>${esc(col)}</small><div class="sz">${p.inv.filter(i=>i.color===col).map(i=>`<label>${esc(i.talla)}<input type="number" min="0" value="${i.stock}" class="${i.stock<=20?"low":""}" data-id="${esc(p.id)}" data-c="${esc(i.color)}" data-s="${esc(i.talla)}"></label>`).join("")}</div></div>`).join("")}</td></tr>`).join("")}</table></div>`;
+}
+async function pqrs(){
+ const ls=await api("/api/admin/pqrs");
+ $("#pq").innerHTML=`<div class="w"><table><tr><th>Radicado</th><th>Cliente</th><th>Solicitud</th><th>Respuesta</th></tr>${ls.map(x=>`<tr><td><b>${esc(x.radicado)}</b><br><small>${esc(x.tipo)} · ${esc(x.fecha)}${x.pedido?"<br>pedido "+esc(x.pedido):""}</small></td><td>${esc(x.nombre)}<br><small>${esc(x.email)}</small></td><td class="msg">${esc(x.mensaje)}</td><td><select data-qe="${x.id}">${["abierto","en_proceso","cerrado"].map(s=>`<option ${s===x.estado?"selected":""}>${s}</option>`).join("")}</select><textarea data-qr="${x.id}" placeholder="Respuesta al cliente">${esc(x.respuesta)}</textarea><button data-qs="${x.id}">Guardar</button></td></tr>`).join("")||"<tr><td colspan=4>No hay solicitudes.</td></tr>"}</table></div>`;
+}
+async function start(){try{await pedidos();sessionStorage.setItem("t",T);$("#app").hidden=false;$("#st").textContent=""}catch(e){$("#st").textContent=e.message==="No autorizado"?"Token incorrecto.":e.message}}
+$("#go").onclick=()=>{T=$("#t").value;start()};
+document.querySelector(".tabs").onclick=e=>{const t=e.target.dataset.t;if(!t)return;document.querySelectorAll(".tabs button").forEach(b=>b.classList.toggle("on",b===e.target));["ped","inv","pq"].forEach(k=>$("#"+k).hidden=k!==t);({ped:pedidos,inv:inventario,pq:pqrs})[t]()};
+document.addEventListener("change",async e=>{const d=e.target.dataset;try{
+ if(d.o){await api("/api/admin/orders/"+d.o,{status:e.target.value});flash("Estado actualizado");pedidos()}
+ else if(d.id){await api("/api/admin/inventory",{id:d.id,color:d.c,talla:d.s,stock:+e.target.value});e.target.classList.toggle("low",+e.target.value<=20);flash("Stock guardado")}
+ else if(d.p){await api("/api/admin/products/"+d.p,{precio:+e.target.value});flash("Precio guardado")}
+ else if(d.a){await api("/api/admin/products/"+d.a,{activo:e.target.checked});flash(e.target.checked?"Producto visible":"Producto oculto")}
+ else if(e.target.id==="fg"||e.target.id==="fc")inventario();
+}catch(err){alert(err.message)}});
+document.addEventListener("click",async e=>{const id=e.target.dataset.qs;if(!id)return;try{await api("/api/admin/pqrs/"+id,{estado:$(`[data-qe="${id}"]`).value,respuesta:$(`[data-qr="${id}"]`).value});flash("Respuesta guardada")}catch(err){alert(err.message)}});
+if(T)start();
+</script></body></html>

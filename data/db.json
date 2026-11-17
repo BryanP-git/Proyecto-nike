@@ -1,0 +1,962 @@
+{
+ "products": [
+  {
+   "id": "h-camisas-1",
+   "g": "hombre",
+   "cat": "camisas",
+   "n": "Camiseta logo gris",
+   "p": 89900,
+   "c": [
+    "gris"
+   ],
+   "stock": 156
+  },
+  {
+   "id": "h-camisas-2",
+   "g": "hombre",
+   "cat": "camisas",
+   "n": "Camiseta manga larga gris",
+   "p": 99900,
+   "c": [
+    "gris"
+   ],
+   "stock": 163
+  },
+  {
+   "id": "h-camisas-3",
+   "g": "hombre",
+   "cat": "camisas",
+   "n": "Camiseta entrenamiento morado",
+   "p": 109900,
+   "c": [
+    "morado"
+   ],
+   "stock": 153
+  },
+  {
+   "id": "h-camisas-4",
+   "g": "hombre",
+   "cat": "camisas",
+   "n": "Camiseta entrenamiento vino",
+   "p": 119900,
+   "c": [
+    "vino"
+   ],
+   "stock": 162
+  },
+  {
+   "id": "h-camisas-5",
+   "g": "hombre",
+   "cat": "camisas",
+   "n": "Camiseta entrenamiento mostaza",
+   "p": 129900,
+   "c": [
+    "mostaza"
+   ],
+   "stock": 154
+  },
+  {
+   "id": "h-camisas-6",
+   "g": "hombre",
+   "cat": "camisas",
+   "n": "Polo deportivo azul",
+   "p": 139900,
+   "c": [
+    "azul"
+   ],
+   "stock": 161
+  },
+  {
+   "id": "h-camisas-7",
+   "g": "hombre",
+   "cat": "camisas",
+   "n": "Camiseta running azul rey",
+   "p": 149900,
+   "c": [
+    "azul rey"
+   ],
+   "stock": 153
+  },
+  {
+   "id": "h-camisas-8",
+   "g": "hombre",
+   "cat": "camisas",
+   "n": "Camiseta texturizada negro",
+   "p": 159900,
+   "c": [
+    "negro"
+   ],
+   "stock": 160
+  },
+  {
+   "id": "h-camisas-9",
+   "g": "hombre",
+   "cat": "camisas",
+   "n": "Camiseta swoosh negro",
+   "p": 94900,
+   "c": [
+    "negro"
+   ],
+   "stock": 152
+  },
+  {
+   "id": "h-camisas-10",
+   "g": "hombre",
+   "cat": "camisas",
+   "n": "Camiseta gráfica negro",
+   "p": 104900,
+   "c": [
+    "negro"
+   ],
+   "stock": 159
+  },
+  {
+   "id": "h-hoodies-1",
+   "g": "hombre",
+   "cat": "hoodies",
+   "n": "Hoodie canguro gris",
+   "p": 169900,
+   "c": [
+    "gris"
+   ],
+   "stock": 156
+  },
+  {
+   "id": "h-hoodies-2",
+   "g": "hombre",
+   "cat": "hoodies",
+   "n": "Hoodie clásico café",
+   "p": 189900,
+   "c": [
+    "café"
+   ],
+   "stock": 163
+  },
+  {
+   "id": "h-hoodies-3",
+   "g": "hombre",
+   "cat": "hoodies",
+   "n": "Hoodie oversize gris",
+   "p": 209900,
+   "c": [
+    "gris"
+   ],
+   "stock": 155
+  },
+  {
+   "id": "h-hoodies-4",
+   "g": "hombre",
+   "cat": "hoodies",
+   "n": "Hoodie cremallera azul",
+   "p": 229900,
+   "c": [
+    "azul"
+   ],
+   "stock": 162
+  },
+  {
+   "id": "h-hoodies-5",
+   "g": "hombre",
+   "cat": "hoodies",
+   "n": "Chaqueta cremallera azul",
+   "p": 249900,
+   "c": [
+    "azul"
+   ],
+   "stock": 154
+  },
+  {
+   "id": "h-hoodies-6",
+   "g": "hombre",
+   "cat": "hoodies",
+   "n": "Hoodie oversize negro",
+   "p": 279900,
+   "c": [
+    "negro"
+   ],
+   "stock": 161
+  },
+  {
+   "id": "h-hoodies-7",
+   "g": "hombre",
+   "cat": "hoodies",
+   "n": "Hoodie básico blanco",
+   "p": 199900,
+   "c": [
+    "blanco"
+   ],
+   "stock": 153
+  },
+  {
+   "id": "h-hoodies-8",
+   "g": "hombre",
+   "cat": "hoodies",
+   "n": "Hoodie oversize blanco",
+   "p": 219900,
+   "c": [
+    "blanco"
+   ],
+   "stock": 160
+  },
+  {
+   "id": "h-hoodies-9",
+   "g": "hombre",
+   "cat": "hoodies",
+   "n": "Hoodie canguro blanco",
+   "p": 239900,
+   "c": [
+    "blanco"
+   ],
+   "stock": 152
+  },
+  {
+   "id": "h-hoodies-10",
+   "g": "hombre",
+   "cat": "hoodies",
+   "n": "Hoodie oversize gris",
+   "p": 299900,
+   "c": [
+    "gris"
+   ],
+   "stock": 159
+  },
+  {
+   "id": "h-pantalones-1",
+   "g": "hombre",
+   "cat": "pantalones",
+   "n": "Jogger entrenamiento vino",
+   "p": 149900,
+   "c": [
+    "vino"
+   ],
+   "stock": 150
+  },
+  {
+   "id": "h-pantalones-2",
+   "g": "hombre",
+   "cat": "pantalones",
+   "n": "Pantalón deportivo negro",
+   "p": 169900,
+   "c": [
+    "negro"
+   ],
+   "stock": 157
+  },
+  {
+   "id": "h-pantalones-3",
+   "g": "hombre",
+   "cat": "pantalones",
+   "n": "Pantalón de portero negro",
+   "p": 189900,
+   "c": [
+    "negro"
+   ],
+   "stock": 164
+  },
+  {
+   "id": "h-pantalones-4",
+   "g": "hombre",
+   "cat": "pantalones",
+   "n": "Pantalón térmico negro",
+   "p": 209900,
+   "c": [
+    "negro"
+   ],
+   "stock": 156
+  },
+  {
+   "id": "h-pantalones-5",
+   "g": "hombre",
+   "cat": "pantalones",
+   "n": "Jogger club azul",
+   "p": 159900,
+   "c": [
+    "azul"
+   ],
+   "stock": 163
+  },
+  {
+   "id": "h-pantalones-6",
+   "g": "hombre",
+   "cat": "pantalones",
+   "n": "Jogger cargo gris",
+   "p": 179900,
+   "c": [
+    "gris"
+   ],
+   "stock": 155
+  },
+  {
+   "id": "h-pantalones-7",
+   "g": "hombre",
+   "cat": "pantalones",
+   "n": "Pantalón recto negro",
+   "p": 199900,
+   "c": [
+    "negro"
+   ],
+   "stock": 162
+  },
+  {
+   "id": "h-pantalones-8",
+   "g": "hombre",
+   "cat": "pantalones",
+   "n": "Pantalón ajustado grafito",
+   "p": 219900,
+   "c": [
+    "grafito"
+   ],
+   "stock": 154
+  },
+  {
+   "id": "h-pantalones-9",
+   "g": "hombre",
+   "cat": "pantalones",
+   "n": "Jogger ajustado negro",
+   "p": 229900,
+   "c": [
+    "negro"
+   ],
+   "stock": 161
+  },
+  {
+   "id": "h-pantalones-10",
+   "g": "hombre",
+   "cat": "pantalones",
+   "n": "Jogger fleece grafito",
+   "p": 249900,
+   "c": [
+    "grafito"
+   ],
+   "stock": 153
+  },
+  {
+   "id": "h-zapatos-1",
+   "g": "hombre",
+   "cat": "zapatos",
+   "n": "Tenis running rojo",
+   "p": 329900,
+   "c": [
+    "rojo"
+   ],
+   "stock": 156
+  },
+  {
+   "id": "h-zapatos-2",
+   "g": "hombre",
+   "cat": "zapatos",
+   "n": "Tenis entrenamiento morado",
+   "p": 379900,
+   "c": [
+    "morado"
+   ],
+   "stock": 163
+  },
+  {
+   "id": "h-zapatos-3",
+   "g": "hombre",
+   "cat": "zapatos",
+   "n": "Tenis retro gris",
+   "p": 429900,
+   "c": [
+    "gris"
+   ],
+   "stock": 155
+  },
+  {
+   "id": "h-zapatos-4",
+   "g": "hombre",
+   "cat": "zapatos",
+   "n": "Tenis running negro",
+   "p": 479900,
+   "c": [
+    "negro"
+   ],
+   "stock": 162
+  },
+  {
+   "id": "h-zapatos-5",
+   "g": "hombre",
+   "cat": "zapatos",
+   "n": "Tenis clásicos grafito",
+   "p": 529900,
+   "c": [
+    "grafito"
+   ],
+   "stock": 154
+  },
+  {
+   "id": "h-zapatos-6",
+   "g": "hombre",
+   "cat": "zapatos",
+   "n": "Tenis running vino",
+   "p": 349900,
+   "c": [
+    "vino"
+   ],
+   "stock": 161
+  },
+  {
+   "id": "h-zapatos-7",
+   "g": "hombre",
+   "cat": "zapatos",
+   "n": "Tenis charol negro",
+   "p": 399900,
+   "c": [
+    "negro"
+   ],
+   "stock": 153
+  },
+  {
+   "id": "h-zapatos-8",
+   "g": "hombre",
+   "cat": "zapatos",
+   "n": "Tenis urbanos negro",
+   "p": 449900,
+   "c": [
+    "negro"
+   ],
+   "stock": 160
+  },
+  {
+   "id": "h-zapatos-9",
+   "g": "hombre",
+   "cat": "zapatos",
+   "n": "Tenis entrenamiento rojo",
+   "p": 499900,
+   "c": [
+    "rojo"
+   ],
+   "stock": 152
+  },
+  {
+   "id": "h-zapatos-10",
+   "g": "hombre",
+   "cat": "zapatos",
+   "n": "Tenis clásicos gris",
+   "p": 599900,
+   "c": [
+    "gris"
+   ],
+   "stock": 159
+  },
+  {
+   "id": "m-camisas-1",
+   "g": "mujer",
+   "cat": "camisas",
+   "n": "Camiseta sin mangas durazno",
+   "p": 119900,
+   "c": [
+    "durazno"
+   ],
+   "stock": 156
+  },
+  {
+   "id": "m-camisas-2",
+   "g": "mujer",
+   "cat": "camisas",
+   "n": "Camiseta básica gris",
+   "p": 129900,
+   "c": [
+    "gris"
+   ],
+   "stock": 163
+  },
+  {
+   "id": "m-camisas-3",
+   "g": "mujer",
+   "cat": "camisas",
+   "n": "Camiseta entrenamiento negro",
+   "p": 139900,
+   "c": [
+    "negro"
+   ],
+   "stock": 155
+  },
+  {
+   "id": "m-camisas-4",
+   "g": "mujer",
+   "cat": "camisas",
+   "n": "Camiseta sin mangas rojo",
+   "p": 149900,
+   "c": [
+    "rojo"
+   ],
+   "stock": 162
+  },
+  {
+   "id": "m-camisas-5",
+   "g": "mujer",
+   "cat": "camisas",
+   "n": "Top corto logo blanco",
+   "p": 159900,
+   "c": [
+    "blanco"
+   ],
+   "stock": 154
+  },
+  {
+   "id": "m-camisas-6",
+   "g": "mujer",
+   "cat": "camisas",
+   "n": "Camiseta manga larga negro",
+   "p": 94900,
+   "c": [
+    "negro"
+   ],
+   "stock": 161
+  },
+  {
+   "id": "m-camisas-7",
+   "g": "mujer",
+   "cat": "camisas",
+   "n": "Camiseta oversize negro",
+   "p": 104900,
+   "c": [
+    "negro"
+   ],
+   "stock": 153
+  },
+  {
+   "id": "m-camisas-8",
+   "g": "mujer",
+   "cat": "camisas",
+   "n": "Camiseta running azul",
+   "p": 89900,
+   "c": [
+    "azul"
+   ],
+   "stock": 160
+  },
+  {
+   "id": "m-camisas-9",
+   "g": "mujer",
+   "cat": "camisas",
+   "n": "Camiseta logo cielo",
+   "p": 99900,
+   "c": [
+    "cielo"
+   ],
+   "stock": 152
+  },
+  {
+   "id": "m-camisas-10",
+   "g": "mujer",
+   "cat": "camisas",
+   "n": "Camiseta básica negro",
+   "p": 109900,
+   "c": [
+    "negro"
+   ],
+   "stock": 159
+  },
+  {
+   "id": "m-hoodies-1",
+   "g": "mujer",
+   "cat": "hoodies",
+   "n": "Hoodie logo rosa",
+   "p": 229900,
+   "c": [
+    "rosa"
+   ],
+   "stock": 156
+  },
+  {
+   "id": "m-hoodies-2",
+   "g": "mujer",
+   "cat": "hoodies",
+   "n": "Hoodie canguro gris",
+   "p": 249900,
+   "c": [
+    "gris"
+   ],
+   "stock": 163
+  },
+  {
+   "id": "m-hoodies-3",
+   "g": "mujer",
+   "cat": "hoodies",
+   "n": "Hoodie oversize lila",
+   "p": 279900,
+   "c": [
+    "lila"
+   ],
+   "stock": 155
+  },
+  {
+   "id": "m-hoodies-4",
+   "g": "mujer",
+   "cat": "hoodies",
+   "n": "Sudadera media cremallera azul",
+   "p": 199900,
+   "c": [
+    "azul"
+   ],
+   "stock": 162
+  },
+  {
+   "id": "m-hoodies-5",
+   "g": "mujer",
+   "cat": "hoodies",
+   "n": "Sudadera media cremallera blanco",
+   "p": 219900,
+   "c": [
+    "blanco"
+   ],
+   "stock": 154
+  },
+  {
+   "id": "m-hoodies-6",
+   "g": "mujer",
+   "cat": "hoodies",
+   "n": "Sudadera cuello redondo blanco",
+   "p": 239900,
+   "c": [
+    "blanco"
+   ],
+   "stock": 161
+  },
+  {
+   "id": "m-hoodies-7",
+   "g": "mujer",
+   "cat": "hoodies",
+   "n": "Buzo manga 3/4 blanco",
+   "p": 299900,
+   "c": [
+    "blanco"
+   ],
+   "stock": 153
+  },
+  {
+   "id": "m-hoodies-8",
+   "g": "mujer",
+   "cat": "hoodies",
+   "n": "Hoodie gráfico blanco",
+   "p": 169900,
+   "c": [
+    "blanco"
+   ],
+   "stock": 160
+  },
+  {
+   "id": "m-hoodies-9",
+   "g": "mujer",
+   "cat": "hoodies",
+   "n": "Sudadera media cremallera negro",
+   "p": 189900,
+   "c": [
+    "negro"
+   ],
+   "stock": 152
+  },
+  {
+   "id": "m-hoodies-10",
+   "g": "mujer",
+   "cat": "hoodies",
+   "n": "Hoodie logo blanco",
+   "p": 209900,
+   "c": [
+    "blanco"
+   ],
+   "stock": 159
+  },
+  {
+   "id": "m-pantalones-1",
+   "g": "mujer",
+   "cat": "pantalones",
+   "n": "Pantalón cargo ancho negro",
+   "p": 209900,
+   "c": [
+    "negro"
+   ],
+   "stock": 150
+  },
+  {
+   "id": "m-pantalones-2",
+   "g": "mujer",
+   "cat": "pantalones",
+   "n": "Pantalón ancho negro",
+   "p": 159900,
+   "c": [
+    "negro"
+   ],
+   "stock": 157
+  },
+  {
+   "id": "m-pantalones-3",
+   "g": "mujer",
+   "cat": "pantalones",
+   "n": "Pantalón ancho fleece azul",
+   "p": 179900,
+   "c": [
+    "azul"
+   ],
+   "stock": 164
+  },
+  {
+   "id": "m-pantalones-4",
+   "g": "mujer",
+   "cat": "pantalones",
+   "n": "Pantalón con franja negro",
+   "p": 199900,
+   "c": [
+    "negro"
+   ],
+   "stock": 156
+  },
+  {
+   "id": "m-pantalones-5",
+   "g": "mujer",
+   "cat": "pantalones",
+   "n": "Pantalón entrenamiento negro",
+   "p": 219900,
+   "c": [
+    "negro"
+   ],
+   "stock": 163
+  },
+  {
+   "id": "m-pantalones-6",
+   "g": "mujer",
+   "cat": "pantalones",
+   "n": "Jogger fucsia",
+   "p": 229900,
+   "c": [
+    "fucsia"
+   ],
+   "stock": 155
+  },
+  {
+   "id": "m-pantalones-7",
+   "g": "mujer",
+   "cat": "pantalones",
+   "n": "Jogger oversize blanco",
+   "p": 249900,
+   "c": [
+    "blanco"
+   ],
+   "stock": 162
+  },
+  {
+   "id": "m-pantalones-8",
+   "g": "mujer",
+   "cat": "pantalones",
+   "n": "Jogger track negro",
+   "p": 149900,
+   "c": [
+    "negro"
+   ],
+   "stock": 154
+  },
+  {
+   "id": "m-pantalones-9",
+   "g": "mujer",
+   "cat": "pantalones",
+   "n": "Jogger cargo beige",
+   "p": 169900,
+   "c": [
+    "beige"
+   ],
+   "stock": 161
+  },
+  {
+   "id": "m-pantalones-10",
+   "g": "mujer",
+   "cat": "pantalones",
+   "n": "Pantalón recto blanco",
+   "p": 189900,
+   "c": [
+    "blanco"
+   ],
+   "stock": 153
+  },
+  {
+   "id": "m-zapatos-1",
+   "g": "mujer",
+   "cat": "zapatos",
+   "n": "Tenis running rosa",
+   "p": 479900,
+   "c": [
+    "rosa"
+   ],
+   "stock": 156
+  },
+  {
+   "id": "m-zapatos-2",
+   "g": "mujer",
+   "cat": "zapatos",
+   "n": "Tenis entrenamiento rosa",
+   "p": 529900,
+   "c": [
+    "rosa"
+   ],
+   "stock": 163
+  },
+  {
+   "id": "m-zapatos-3",
+   "g": "mujer",
+   "cat": "zapatos",
+   "n": "Tenis de carrera fucsia",
+   "p": 349900,
+   "c": [
+    "fucsia"
+   ],
+   "stock": 155
+  },
+  {
+   "id": "m-zapatos-4",
+   "g": "mujer",
+   "cat": "zapatos",
+   "n": "Tenis retro vino",
+   "p": 399900,
+   "c": [
+    "vino"
+   ],
+   "stock": 162
+  },
+  {
+   "id": "m-zapatos-5",
+   "g": "mujer",
+   "cat": "zapatos",
+   "n": "Tenis entrenamiento lila",
+   "p": 449900,
+   "c": [
+    "lila"
+   ],
+   "stock": 154
+  },
+  {
+   "id": "m-zapatos-6",
+   "g": "mujer",
+   "cat": "zapatos",
+   "n": "Tenis running rosa",
+   "p": 499900,
+   "c": [
+    "rosa"
+   ],
+   "stock": 161
+  },
+  {
+   "id": "m-zapatos-7",
+   "g": "mujer",
+   "cat": "zapatos",
+   "n": "Tenis de carrera fucsia",
+   "p": 599900,
+   "c": [
+    "fucsia"
+   ],
+   "stock": 153
+  },
+  {
+   "id": "m-zapatos-8",
+   "g": "mujer",
+   "cat": "zapatos",
+   "n": "Tenis de carrera vino",
+   "p": 329900,
+   "c": [
+    "vino"
+   ],
+   "stock": 160
+  },
+  {
+   "id": "m-zapatos-9",
+   "g": "mujer",
+   "cat": "zapatos",
+   "n": "Tenis de cancha negro",
+   "p": 379900,
+   "c": [
+    "negro"
+   ],
+   "stock": 152
+  },
+  {
+   "id": "m-zapatos-10",
+   "g": "mujer",
+   "cat": "zapatos",
+   "n": "Tenis de cancha durazno",
+   "p": 429900,
+   "c": [
+    "durazno"
+   ],
+   "stock": 159
+  }
+ ],
+ "orders": [
+  {
+   "id": "A-8884A4",
+   "invoice": "NK-000002",
+   "uid": null,
+   "date": "2026-11-10T21:12:35.298Z",
+   "customer": {
+    "name": "bryan",
+    "email": "bryan@gmail.com",
+    "phone": "313",
+    "address": "3 carrito",
+    "city": "bogota"
+   },
+   "items": [
+    {
+     "id": "h-camisas-3",
+     "n": "Camiseta entrenamiento morado",
+     "col": "morado",
+     "size": "XS",
+     "q": 2,
+     "price": 109900
+    }
+   ],
+   "total": 219800,
+   "base": 184706,
+   "iva": 35094,
+   "payment": {
+    "method": "contraentrega"
+   },
+   "status": "nuevo"
+  },
+  {
+   "id": "A-B15F9B",
+   "invoice": "NK-000001",
+   "uid": null,
+   "date": "2026-11-03T21:35:37.711Z",
+   "customer": {
+    "name": "Ana",
+    "email": "ana@x.co",
+    "phone": "",
+    "address": "Calle 1 # 2-3",
+    "city": "Cali"
+   },
+   "items": [
+    {
+     "id": "m-camisas-2",
+     "n": "Camisa oversize",
+     "col": "blanco",
+     "size": "S",
+     "q": 1,
+     "price": 94900
+    }
+   ],
+   "total": 94900,
+   "base": 79748,
+   "iva": 15152,
+   "status": "nuevo"
+  }
+ ],
+ "users": [
+  {
+   "id": "f47a2ee035",
+   "username": "guesst",
+   "email": "guesst@nike.test",
+   "salt": "5ea468fb7d48324c",
+   "hash": "7fd715820e9647b2ff16b7ec4da8b6c0fca8275c69bdae48da84eaa450ffafff",
+   "phone": "+57 3001234567",
+   "pc": "CO",
+   "pn": "3001234567",
+   "address": "Calle 100 # 15-20",
+   "city": "Bogotá",
+   "avatar": ""
+  }
+ ],
+ "sessions": {},
+ "seq": 2,
+ "v": 2,
+ "cat": "nike-1"
+}

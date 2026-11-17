@@ -1,0 +1,25 @@
+{
+ "name": "Armario · Tienda urbana",
+ "short_name": "Armario",
+ "description": "Tienda de ropa urbana en un cuarto 3D de grafiti: gira las paredes, toca una prenda y cómprala.",
+ "lang": "es-CO",
+ "id": "/",
+ "start_url": "/?app=pwa",
+ "scope": "/",
+ "display": "standalone",
+ "display_override": ["standalone", "minimal-ui"],
+ "orientation": "portrait",
+ "background_color": "#07050b",
+ "theme_color": "#0a0710",
+ "categories": ["shopping", "lifestyle"],
+ "icons": [
+  {"src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+  {"src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+  {"src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
+  {"src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+ ],
+ "shortcuts": [
+  {"name": "Hombre", "url": "/?g=hombre", "icons": [{"src": "/icons/icon-192.png", "sizes": "192x192"}]},
+  {"name": "Mujer", "url": "/?g=mujer", "icons": [{"src": "/icons/icon-192.png", "sizes": "192x192"}]}
+ ]
+}

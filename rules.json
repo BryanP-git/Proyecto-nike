@@ -1,0 +1,51 @@
+{
+ "name": {
+  "min": 3,
+  "max": 40,
+  "re": "^[\\p{L}\\p{N}]+(?:[ ._-][\\p{L}\\p{N}]+)*$",
+  "msg": "Solo letras, números y espacios; también . _ - entre palabras (sin dobles ni al inicio/final)"
+ },
+ "email": {
+  "max": 100,
+  "re": "^(?!.*\\.\\.)[A-Za-z0-9](?:[A-Za-z0-9._%+-]{0,62}[A-Za-z0-9])?@[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?(?:\\.[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?)*\\.[A-Za-z]{2,}$",
+  "msg": "Correo no válido. Antes de la @ solo letras, números y . _ % + - (sin puntos seguidos)"
+ },
+ "address": {
+  "min": 6,
+  "max": 160,
+  "re": "^(?=.*\\p{L})[\\p{L}\\p{N} #.,°º/-]+$",
+  "msg": "Dirección no válida: usa letras, números y # . , - /"
+ },
+ "city": {
+  "min": 2,
+  "max": 60,
+  "re": "^\\p{L}[\\p{L} .'-]*$",
+  "msg": "Ciudad no válida: solo letras, espacios, punto, guion o apóstrofo"
+ },
+ "password": {
+  "min": 8,
+  "max": 64,
+  "checks": [
+   {
+    "re": "[A-Z]",
+    "t": "Una mayúscula"
+   },
+   {
+    "re": "[a-z]",
+    "t": "Una minúscula"
+   },
+   {
+    "re": "\\d",
+    "t": "Un número"
+   },
+   {
+    "re": "[^A-Za-z0-9\\s]",
+    "t": "Un símbolo (! @ # $ …)"
+   },
+   {
+    "re": "^\\S+$",
+    "t": "Sin espacios"
+   }
+  ]
+ }
+}
